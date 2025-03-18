@@ -131,7 +131,6 @@ if __name__ == "__main__":
                             ##################################################### 
                         
                         FITsCheck = auto_FITs.Handshake(model, operation, serial)
-                        FITsCheck = True
                         if FITsCheck == True:
                             status = GUI(df)
                             df["Serial number"] = serial
