@@ -96,7 +96,6 @@ if __name__ == "__main__":
             list_of_files = glob.glob(os.path.join(f, "**\TestReport*.csv"))
             if list_of_files: 
                 latest_file = max(list_of_files, key=os.path.getctime)
-                print("File:\t",latest_file)
                 fullpath = os.path.dirname(latest_file)
                 check_file_path = os.path.join(fullpath, "events.csv")
                 if os.path.exists(check_file_path):
@@ -129,7 +128,7 @@ if __name__ == "__main__":
                                     print(f"{error}:\n{f}")
                             continue
                             ##################################################### 
-                        
+                        print("File:\t",latest_file)
                         FITsCheck = auto_FITs.Handshake(model, operation, serial)
                         if FITsCheck == True:
                             status = GUI(df)
@@ -165,7 +164,7 @@ if __name__ == "__main__":
                                     elif operation == "LT420":
                                         movefolder(serial, f, fullpath, Log_path_AB)
                                     print(f"operation: {operation} Serial: {serial} FAIL Record to FITs")
-                                    messagebox.showwarning("FITs MESSAGEs", f"operation: {operation} Serial: {serial} FAIL Record to FITs")
+                                    messagebox.showwarning("FITs MESSAGEs", f"{FITsLog}")
                                 
                             else:
                                 movefolder(serial, f, fullpath, Backup_DEBUG)
@@ -177,8 +176,8 @@ if __name__ == "__main__":
                                 movefolder(serial, f, fullpath, Handcheck_path_BB)
                             elif operation == "LT420":
                                 movefolder(serial, f, fullpath, Handcheck_path_AB)
-                            print(f"operation: {operation} Serial: {serial} HandCheck Fail Please check in FITs Process flow")
-                            messagebox.showwarning("FITs MESSAGEs", f"operation: {operation} Serial: {serial} HandCheck Fail Please check in FITs Process flow")
+                            print(f"HandCheck Fail {FITsCheck}")
+                            messagebox.showwarning("FITs MESSAGEs", f"{FITsCheck}")
         
         time.sleep(10)
         print("Sleep 10 sec")
