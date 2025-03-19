@@ -136,10 +136,10 @@ if __name__ == "__main__":
                                 status = GUI(df)
                                 df["Serial number"] = serial
                                 df["MC"] = os.environ['COMPUTERNAME']
-                                df = df.rename(columns={"Serial number": "SN XCVR", "Machine": "Machine No.", "Optocast 3410 Lot no": "Optocast 3410 Lot no.",
+                                df = df.rename(columns={"Serial number": "SN  XCVR", "Machine": "Machine No.", "Optocast 3410 Lot no": "Optocast 3410 Lot no.",
                                                         "Site A X": "APD A Boresight X", "Site A Y": "APD A Boresight Y","Divergence A": "APD A Divergence (mRad)",
                                                         "Site B X": "APD B Boresight X", "Site B Y": "APD B Boresight Y","Divergence B": "APD B Divergence (mRad)",
-                                                        " FPC temp": "Slim FPC TMP102 (Degree Celsius)", "Divergence Result": "Divergence Result",
+                                                        " FPC temp": "Slim FPC TMP102 (Degree Celsius)", "Divergence Result": "Divergence Alignment",
                                                         " Boresight Result": "Boresight Alignment"
                                                         })
                                 if status == True:
